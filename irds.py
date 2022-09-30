@@ -8,8 +8,8 @@ def military_alphabet_key() -> dict:
         'Golf', 'Hotel', 'India', 'Juliet', 'Kilo', 'Lima', 
         'Mike', 'November', 'Oscar', 'Papa', 'Quebec', 'Romeo', 
         'Sierra', 'Tango', 'Uniform', 'Victor', 'Whiskey', 'X-Ray', 'Yankee', 'Zulu']
-    alphabet = string.ascii_uppercase
-    military_alphabet_key = {key:value for key, value in zip(alphabet, code)}
+    uppercase_alphabet = string.ascii_uppercase
+    military_alphabet_key = {key:value for key, value in zip(upper_alphabet, code)}
     return military_alphabet_key
 
 def letter_to_code(letter: str, codex: dict) -> str:
