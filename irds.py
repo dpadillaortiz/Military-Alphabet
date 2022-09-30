@@ -3,17 +3,17 @@
 
 import string
 
-def military_alphabet() -> dict:
+def irsa_key() -> dict:
     code = ['Alpha', 'Bravo', 'Charlie', 'Delta', 'Echo', 'Foxtrot', 
         'Golf', 'Hotel', 'India', 'Juliet', 'Kilo', 'Lima', 
         'Mike', 'November', 'Oscar', 'Papa', 'Quebec', 'Romeo', 
         'Sierra', 'Tango', 'Uniform', 'Victor', 'Whiskey', 'X-Ray', 'Yankee', 'Zulu']
     alphabet = string.ascii_uppercase
-    military_alphabet = {key:value for key, value in zip(alphabet, code)}
-    return military_alphabet
+    irsa_key = {key:value for key, value in zip(alphabet, code)}
+    return irsa_key
 
 def letter_to_code(letter: str) -> str:
-    military_code = military_alphabet()
+    military_code = irsa_key()
     return military_code[letter]
 
 def word_to_code(word: str, codex: dict) -> str:
@@ -23,7 +23,7 @@ def word_to_code(word: str, codex: dict) -> str:
     return coded_word
 
 if __name__ == '__main__':
-    x = military_alphabet()
+    x = irsa_key()
     print(x)
     y = letter_to_code('M')
     print(y)
