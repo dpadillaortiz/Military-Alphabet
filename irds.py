@@ -8,7 +8,7 @@ def military_alphabet_key() -> dict:
         'Golf', 'Hotel', 'India', 'Juliet', 'Kilo', 'Lima', 
         'Mike', 'November', 'Oscar', 'Papa', 'Quebec', 'Romeo', 
         'Sierra', 'Tango', 'Uniform', 'Victor', 'Whiskey', 'X-Ray', 'Yankee', 'Zulu']
-    uppercase_alphabet = string.ascii_uppercase
+    upper_alphabet = string.ascii_uppercase
     military_alphabet_key = {key:value for key, value in zip(upper_alphabet, code)}
     return military_alphabet_key
 
@@ -18,9 +18,13 @@ def letter_to_code(letter: str, codex: dict) -> str:
 
 def word_to_code(word: str, codex: dict) -> str:
     coded_word = ''
-    for letter in word:
+    last_index_of_word = len(word) - 1
+    for index, letter in enumerate(word):
         coded_word += letter_to_code(letter.upper(), codex)
+        if index != last_index_of_word:
+            coded_word += '-'
     return coded_word
+
 
 if __name__ == '__main__':
     x = military_alphabet_key()
